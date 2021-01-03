@@ -1,7 +1,3 @@
-var bleep = new Audio();
-bleep.src = 'https://www.myinstants.com/media/sounds/another-one_1.mp3';
-
-
 $(document).ready(function(){
   newQuote();
 });
