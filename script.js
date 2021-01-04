@@ -1,6 +1,14 @@
-function randomRange(myMin, myMax) {
-  return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
-}
+$(document).ready(function(){
+  newQuote();
+});
+
+var newQuote = function(){
+  var index = Math.floor(Math.random() * quotes.length);
+  
+  $('span.quote').html('"' + quotes[index] + '"');
+  
+  $('a.twitter-share-button').attr('href', twitURI(quotes[index]));
+};
 
 
 var quotes = [
@@ -16,57 +24,9 @@ var quotes = [
 
 ];
 
-var randomNum = randomRange(0, quotes.length-1);
-
-var randomNum2 = randomRange(0, quotes.length-1);
-
-$(document).ready(function() {
-      $("button").css("color", "white");
-      $("#text").html('<strong>"' + quotes[randomNum] + '"</strong>');
-  document.getElementById("tweet-quote").href = 'https://twitter.com/intent/tweet?text=' + quotes[randomNum];
-  
-});
 
 
-document.getElementById("text").addEventListener("click", click2);
 
-
-function click2() {
-  var randomNum = randomRange(0, quotes.length-1);;
-  
-  if(randomNum==0){
-  document.getElementById("text").innerHTML = '<strong>"' + quotes[1] + '"</strong>';
-  document.getElementById("tweet-quote").href = 'https://twitter.com/intent/tweet?text=' + quotes[1];
-  }
- if(randomNum==1){
-  document.getElementById("text").innerHTML = '<strong>"' + quotes[2] + '"</strong>';
-    document.getElementById("tweet-quote").href = 'https://twitter.com/intent/tweet?text=' + quotes[2];
-}
-   if(randomNum==2){
-  document.getElementById("text").innerHTML = '<strong>"' + quotes[3] + '"</strong>';
-  document.getElementById("tweet-quote").href = 'https://twitter.com/intent/tweet?text=' + quotes[4];
-}
- if(randomNum==3){
-  document.getElementById("text").innerHTML = '<strong>"' + quotes[4] + '"</strong>';
-  document.getElementById("tweet-quote").href = 'https://twitter.com/intent/tweet?text=' + quotes[4];
-}
-   if(randomNum==4){
-  document.getElementById("text").innerHTML = '<strong>"' + quotes[5] + '"</strong>';
-  document.getElementById("tweet-quote").href = 'https://twitter.com/intent/tweet?text=' + quotes[4];
-}
-    if(randomNum==5){
-  document.getElementById("text").innerHTML = '<strong>"' + quotes[6] + '"</strong>';
-  document.getElementById("tweet-quote").href = 'https://twitter.com/intent/tweet?text=' + quotes[4];
-}
-   if(randomNum==6){
-  document.getElementById("text").innerHTML = '<strong>"' + quotes[0] + '"</strong>';
-  document.getElementById("tweet-quote").href = 'https://twitter.com/intent/tweet?text=' + quotes[0];
-}
-    if(randomNum>6){
-  document.getElementById("text").innerHTML = '<strong>"' + quotes[randomNum] + '"</strong>';
-  document.getElementById("tweet-quote").href = 'https://twitter.com/intent/tweet?text=' + quotes[randomNum];
-}
-}
 
  
 
